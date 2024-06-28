@@ -3,11 +3,14 @@
 import countriesJson from "../countries.json";
 
 const Selector = () => {
-  console.log(countriesJson); // 追加
   return (
     <div>
       <select>
-        {/* countriesJson.map((x)=> {<option>x.slug</option>})  */}
+        {countriesJson.map((countryElm, index) => (
+          <option key={index} value={countryElm.Slug}>
+            {countryElm.Country}
+          </option>
+        ))}
       </select>
     </div>
   );
